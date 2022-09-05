@@ -1,64 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Oliveira Trust PHP Money Converter
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIAOtqQ5is5vwbcEn0ZahZfMxz1QIeAYtFfnLdkCXu1sqAGbnX" width="300">
+ </p>
 
-## About Laravel
+## Desafio para candidatos à vaga de Desenvolvedor PHP (Jr/Pleno/Sênior).
+Olá caro desenvolvedor, nosso principal objetivo é conseguir ver a lógica implementada independente da sua experiência, framework ou linguagem utilizada para resolver o desafio. Queremos avaliar a sua capacidade em aplicar as regras de négocios na aplicação, separar as responsabilidades e ter um código legível para outros desenvolvedores, as instruções nesse projeto são apenas um direcional para entregar o desafio mas pode ficar livre para resolver da forma que achar mais eficiente. 🚀
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Não deixe de enviar o seu teste mesmo que incompleto!
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tecnologias a serem utilizadas
+* HTML
+* CSS
+* Javascript
+* PHP (Laravel, Yii, Lumen, etc...)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## O que vamos avaliar:
+- Legibilidade do código
+- Modularização
+- Lógica para aplicar a regra de négocio
+- Utilização da API
 
-## Learning Laravel
+## Instruções para o desafio:
+Você vai implementar uma aplicação que faça a conversão da nossa moeda nacional para uma moeda estrangeira, aplicando algumas taxas e regras, no final da conversão o resultado deverá ficar em tela de forma detalhada.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Pode utilizar qualquer API para conversão de valores, mas recomendamos essa aqui: https://docs.awesomeapi.com.br/api-de-moedas pela facilidade e boa documentação.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## O Desafio:
+O usuário precisa informar 3 informações em tela, moeda de destino, valor para conversão e forma de pagamento. A nossa moeda nacional BRL será usada como moeda base na conversão.
 
-## Laravel Sponsors
+### As Regras de négocio:
+- Moeda de origem BRL;
+- Informar uma moeda de compra que não seja BRL (exibir no mínimo 2 opções);
+- Valor da Compra em BRL (deve ser maior que R$ 1.000,00 e menor que R$ 100.000,00)
+- Formas de pagamento (taxas aplicadas no valor da compra e aceitar apenas as opções abaixo)
+  - Para pagamentos em boleto, taxa de 1,45%
+  - Para pagamentos em cartão de crédito, taxa de 7,63%
+- Aplicar taxa de 2% pela conversão para valores abaixo de R$ 3.000,00 e 1% para valores maiores que R$ 3.000,00,
+essa taxa deve ser aplicada apenas no valor da compra e não sobre o valor já com a taxa de forma de pagamento.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Exemplos de entrada:
+- Moeda de origem: BRL (default)
+- Moeda de destino:
+  - Exemplo: USD, BTC, ...
+- Valor para conversão:
+  - Exemplo: 5.000,00, 1.000,00, 70.000,00, ...
+- Forma de pagamento:
+  - Boleto ou Cartão de Crédito
 
-### Premium Partners
+### Exemplo de funcionamento:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+#### Parâmetros de entrada:
+- Moeda de origem: BRL (default)
+- Moeda de destino: USD
+- Valor para conversão: 5.000,00
+- Forma de pagamento: Boleto
 
-## Contributing
+#### Parâmetros de saída:
+- Moeda de origem: BRL
+- Moeda de destino: USD
+- Valor para conversão: R$ 5.000,00
+- Forma de pagamento: Boleto
+- Valor da "Moeda de destino" usado para conversão: $ 5,30
+- Valor comprado em "Moeda de destino": $ 920,18 (taxas aplicadas no valor de compra diminuindo no valor total de conversão)
+- Taxa de pagamento: R$ 72,50
+- Taxa de conversão: R$ 50,00
+- Valor utilizado para conversão descontando as taxas: R$ 4.877,50
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Critério de aceitação:
+Deve ser possível escolher uma moeda estrangeira entre pelo menos 2 opções sendo o seu valor de compra maior que R$ 1.000 e menor que R$ 100.000,00
+e sua forma de pagamento em boleto ou cartão de crédito tendo como resultado o valor que será adquirido na moeda de destino e as taxas aplicadas;
 
-## Code of Conduct
+### Bônus:
+* Enviar cotação realizada por email;
+* Autenticação de usuário;
+* Histórico de cotações feita pelo usuário;
+* Uma opção no painel para configurar as taxas aplicadas na conversão;
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Informações úteis da api:
+- Conversão BRL para USD
+    - https://economia.awesomeapi.com.br/json/last/BRL-USD
+- Moedas para conversão
+    - https://docs.awesomeapi.com.br/api-de-moedas#moedas-com-conversao-para
+- Tradução das moedas
+    - https://economia.awesomeapi.com.br/json/available/uniq
+- Combinações possíveis
+    - https://economia.awesomeapi.com.br/json/available
+- Legendas
+    - https://docs.awesomeapi.com.br/api-de-moedas#legendas
 
-## Security Vulnerabilities
+## Finalização e Instruções para a Apresentação
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Avisar sobre a finalização e enviar para correção.
 
-## License
+1. Confira se você respondeu o Scorecard da Vaga que chegou no seu email;
+2. Confira se você respondeu o Mapeamento Comportamental que chegou no seu email;
+3. Acesse: [https://coodesh.com/challenges/review](https://coodesh.com/challenges/review);
+4. Adicione o repositório com a sua solução;
+5. Grave um vídeo, utilizando o botão na tela de solicitar revisão da Coodesh, com no máximo 5 minutos, com a apresentação do seu projeto. Foque em pontos obrigatórios e diferenciais quando for apresentar.
+6. Adicione o link da apresentação do seu projeto no README.md.
+7. Verifique se o Readme está bom e faça o commit final em seu repositório;
+8. Confira a vaga desejada;
+9. Envie e aguarde as instruções para seguir no processo. Sucesso e boa sorte. =)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Suporte
+
+Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com.
+
+
+### Boa sorte! 🚀

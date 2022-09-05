@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::name('site.')->group(function() {
     Route::get('/', [SiteController::class, 'home'])->name('home');
     Route::post('convert', [SiteController::class, 'convert'])->name('convert');
+    Route::get('conversions', [SiteController::class, 'getConvertions'])->name('conversions');
 });
 

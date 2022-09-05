@@ -18,15 +18,15 @@ class CreateConvertionsTable extends Migration
             $table->string('from')->default('BRL')->nullable();
             $table->string('to')->nullable();
             $table->string('payment_method')->nullable();
-            $table->float('amount')->nullable();
-            $table->float('tax_value')->nullable();
-            $table->float('extra_tax_value')->nullable();
-            $table->float('convertion_rate')->nullable();
-            $table->float('total_converted_value')->nullable();
-            $table->float('payment_tax')->nullable();
-            $table->float('convertion_tax')->nullable();
-            $table->float('discounted_amount')->nullable();
-            $table->float('converted_discounted_amount')->nullable();
+            $table->float('amount', 15,5)->nullable();
+            $table->float('tax_value', 15,5)->nullable();
+            $table->float('extra_tax_value', 15,5)->nullable();
+            $table->float('convertion_rate', 15,5)->nullable();
+            $table->float('total_converted_value', 15,5)->nullable();
+            $table->float('payment_tax', 15,5)->nullable();
+            $table->float('convertion_tax', 15,5)->nullable();
+            $table->float('discounted_amount', 15,5)->nullable();
+            $table->float('converted_discounted_amount', 15,5)->nullable();
             $table->timestamps();
         });
     }
